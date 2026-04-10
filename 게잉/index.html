@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>오렌지 게임 (Orange Game)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="game-header">
+            <h1 class="logo">🍊 Orange Box</h1>
+            <div class="stats">
+                <div class="stat-box">
+                    <span class="stat-label">TIME</span>
+                    <span class="stat-value" id="timerDisplay">2:00</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">SCORE</span>
+                    <span class="stat-value" id="scoreDisplay">0</span>
+                </div>
+                <div class="stat-box">
+                    <span class="stat-label">BOMB</span>
+                    <span class="stat-value" id="bombDisplay">2</span>
+                </div>
+                <button class="btn primary-btn" id="headerRestartBtn" style="padding: 8px 20px; font-size: 1rem; align-self: center; margin-left: 10px;">다시 시작</button>
+            </div>
+        </header>
+
+        <main class="game-board-container" id="gameBoardContainer">
+            <div id="grid" class="grid"></div>
+            <div id="selectionBox" class="selection-box"></div>
+        </main>
+        
+        <div class="modal-overlay" id="startModal">
+            <div class="modal-content glass">
+                <h2>오렌지 게임</h2>
+                <p>마우스로 드래그해서 오렌지에 적힌 숫자의 합이<br><strong>정확히 10</strong>이 되도록 만드세요!</p>
+                <button class="btn primary-btn" id="startBtn">게임 시작</button>
+            </div>
+        </div>
+
+        <div class="modal-overlay hidden" id="gameOverModal">
+            <div class="modal-content glass">
+                <h2>게임 오버!</h2>
+                <p>최종 점수: <strong id="finalScore">0</strong></p>
+                <button class="btn primary-btn" id="restartBtn">다시 하기</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
